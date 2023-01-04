@@ -1,0 +1,11 @@
+// docker create container
+docker run --name=todo_list -e POSTGRES_PASSWORD=qwerty -p 5436:5432 -d postgres
+
+// migrate create
+migrate create -ext sql -dir ./schema -seq init
+
+migrate -path ./schema -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' up
+
+docker exec -it f5d bin/bash
+
+psql -U postgres
