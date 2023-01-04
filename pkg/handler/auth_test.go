@@ -13,7 +13,7 @@ import (
 	"github.com/magiconair/properties/assert"
 )
 
-func TestHandler_signUp(t *testing.T) {
+func Test_signUp(t *testing.T) {
 	type mockBehavior func(s *mock_services.MockAuthorization, user todo.User)
 
 	testTable := []struct {
